@@ -1,6 +1,8 @@
 import React from "react";
 
-const NameInput = ({ value, handleInput }) => {
+const NameInput = (props) => {
+  const { value, handleInput } = props
+
   return (
     <input
       type="text"

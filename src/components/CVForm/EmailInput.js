@@ -1,6 +1,8 @@
 import React from "react";
 
-const EmailInput = ({ value, handleInput }) => {
+const EmailInput = (props) => {
+  const { value, handleInput } = props
+  
   return (
     <input
       type="text"

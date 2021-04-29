@@ -4,6 +4,7 @@ import RenderEdu from "./CVForm/RenderEdu";
 
 import NameInput from "./CVForm/NameInput";
 import EmailInput from "./CVForm/EmailInput";
+import PhoneInput from "./CVForm/PhoneInput";
 
 class Main extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class Main extends Component {
     this.state = {
       name: "",
       email: "",
+      phone: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -21,7 +23,7 @@ class Main extends Component {
     this.setState({
       [key]: value,
     });
-    console.log(this.state)
+    console.log(this.state);
   }
 
   render() {
@@ -35,6 +37,10 @@ class Main extends Component {
           value={this.state.email}
           handleInput={this.handleInputChange}
         ></EmailInput>
+        <PhoneInput
+          value={this.state.phone}
+          handleInput={this.handleInputChange}
+        ></PhoneInput>
       </div>
     );
   }
