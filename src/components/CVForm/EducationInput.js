@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 const EducationInput = (props) => {
   const { value, handleInput } = props;
@@ -31,64 +31,5 @@ const EducationInput = (props) => {
     </div>
   );
 };
-
-// class Education extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//       school: "",
-//       city: "",
-//       degree: "",
-//     };
-//   }
-
-//   handleChange = (e) => {
-//     let value = e.target.value;
-//     let key = e.target.name;
-//     this.setState({
-//       [key]: value,
-//     });
-//     console.log(this.state);
-//   };
-
-//   onSubmitInput = (e) => {
-//     e.preventDefault();
-//     console.log(this.state.edu);
-//   };
-
-//   render() {
-//     return (
-//       <div className="educationDiv">
-//         <form onSubmit={this.onSubmitInput}>
-//           <label>
-//             School:
-//             <input
-//               type="text"
-//               onChange={this.handleChange}
-//               value={this.state.school}
-//               name="school"
-//             ></input>
-//             City:
-//             <input
-//               type="text"
-//               onChange={this.handleChange}
-//               value={this.state.city}
-//               name="city"
-//             ></input>
-//             Degree:
-//             <input
-//               type="text"
-//               onChange={this.handleChange}
-//               value={this.state.degree}
-//               name="degree"
-//             ></input>
-//             <button type="submit">Add</button>
-//           </label>
-//         </form>
-
-//       </div>
-//     );
-//   }
-// }
 
 export default EducationInput;

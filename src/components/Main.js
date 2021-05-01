@@ -4,6 +4,7 @@ import NameInput from "./CVForm/NameInput";
 import EmailInput from "./CVForm/EmailInput";
 import PhoneInput from "./CVForm/PhoneInput";
 import EducationInput from "./CVForm/EducationInput";
+import ExperienceInput from "./CVForm/ExperienceInput";
 
 class Main extends Component {
   constructor(props) {
@@ -19,9 +20,19 @@ class Main extends Component {
           degree: "",
         },
       ],
+      experience: [
+        {
+          jobTitle: "",
+          companyName: "",
+          dateFrom: "",
+          dateTo: "",
+          summary: "",
+        },
+      ],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleExperienceChange = this.handleExperienceChange.bind(this);
   }
 
   handleInputChange(e) {
@@ -39,14 +50,28 @@ class Main extends Component {
     let key = e.target.name; // name of the input eg school
 
     let array = [...this.state.education]; // creates array based off state
-    console.log(array); 
-    let item = { ...array[0] }; // targets array for data, can add further arrays later 
+    console.log(array);
+    let item = { ...array[0] }; // targets array for data, can add further arrays later
     item[key] = value; // targets item based on target name
     array[0] = item; // re adds item to the array which is then set through setState
     this.setState({
       education: array,
     });
+    console.log(this.state);
+  }
 
+  handleExperienceChange(e) {
+    let value = e.target.value;
+    let key = e.target.name;
+
+    let array = [...this.state.experience];
+    console.log(array);
+    let item = { ...array[0] };
+    item[key] = value;
+    array[0] = item;
+    this.setState({
+      experience: array,
+    });
     console.log(this.state);
   }
 
@@ -68,6 +93,9 @@ class Main extends Component {
         <EducationInput
           handleInput={this.handleEducationChange}
         ></EducationInput>
+        <ExperienceInput
+          handleInput={this.handleExperienceChange}
+        ></ExperienceInput>
       </div>
     );
   }
