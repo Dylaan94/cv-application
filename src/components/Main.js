@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import NameInput from "./CVForm/NameInput";
 import EmailInput from "./CVForm/EmailInput";
 import PhoneInput from "./CVForm/PhoneInput";
-import EducationInput from "./CVForm/EducationInput"
+import EducationInput from "./CVForm/EducationInput";
 
 class Main extends Component {
   constructor(props) {
@@ -12,14 +12,16 @@ class Main extends Component {
       name: "",
       email: "",
       phone: "",
-      education: [{
-        school: "hi",
-        city: "",
-        degree:"",
-      }]
+      education: [
+        {
+          school: "",
+          city: "",
+          degree: "",
+        },
+      ],
     };
     this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleEducationChange = this.handleEducationChange.bind(this)
+    this.handleEducationChange = this.handleEducationChange.bind(this);
   }
 
   handleInputChange(e) {
@@ -29,33 +31,23 @@ class Main extends Component {
       [key]: value,
     });
     console.log(this.state);
-    console.log(this.state.education[0])
+    console.log(this.state.education[0]);
   }
 
   handleEducationChange(e) {
-    let value = e.target.value;
-    let key = e.target.name;
+    let value = e.target.value; // value written in the box
+    let key = e.target.name; // name of the input eg school
 
-    let array = [...this.state.education];
-    console.log(array)
-    let item = { ...array[0] };
-    console.log(item)
-        item[key] = value;
-
-        array[0] = item;
-
+    let array = [...this.state.education]; // creates array based off state
+    console.log(array); 
+    let item = { ...array[0] }; // targets array for data, can add further arrays later 
+    item[key] = value; // targets item based on target name
+    array[0] = item; // re adds item to the array which is then set through setState
     this.setState({
-      education: array
+      education: array,
     });
 
-console.log(this.state)
-   
-    
-
-// console.log(this.state);
-//     console.log(value)
-//     console.log(key)
-    
+    console.log(this.state);
   }
 
   render() {
@@ -75,10 +67,7 @@ console.log(this.state)
         ></PhoneInput>
         <EducationInput
           handleInput={this.handleEducationChange}
-          
-        >
-          
-</EducationInput>
+        ></EducationInput>
       </div>
     );
   }
