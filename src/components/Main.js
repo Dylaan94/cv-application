@@ -35,6 +35,7 @@ class Main extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleInputChange(e) {
@@ -44,7 +45,6 @@ class Main extends Component {
       [key]: value,
     });
     console.log(this.state);
-    console.log(this.state.education[0]);
   }
 
   handleEducationChange(e) {
@@ -77,30 +77,38 @@ class Main extends Component {
     console.log(this.state);
   }
 
+  handleSubmit(e) {
+    e.preventDefault();
+    console.log("form submitted")
+  }
+
   render() {
     return (
       <div>
-        <NameInput
-          value={this.state.name}
-          handleInput={this.handleInputChange}
-        ></NameInput>
-        <EmailInput
-          value={this.state.email}
-          handleInput={this.handleInputChange}
-        ></EmailInput>
-        <PhoneInput
-          value={this.state.phone}
-          handleInput={this.handleInputChange}
-        ></PhoneInput>
-        <EducationInput
-          handleInput={this.handleEducationChange}
-        ></EducationInput>
-        <ExperienceInput
-          handleInput={this.handleExperienceChange}
-        ></ExperienceInput>
-        <PersonalStatementInput
-          handleInput={this.handleInputChange}
-        ></PersonalStatementInput>
+        <form onSubmit = {this.handleSubmit}>
+          <NameInput
+            value={this.state.name}
+            handleInput={this.handleInputChange}
+          ></NameInput>
+          <EmailInput
+            value={this.state.email}
+            handleInput={this.handleInputChange}
+          ></EmailInput>
+          <PhoneInput
+            value={this.state.phone}
+            handleInput={this.handleInputChange}
+          ></PhoneInput>
+          <EducationInput
+            handleInput={this.handleEducationChange}
+          ></EducationInput>
+          <ExperienceInput
+            handleInput={this.handleExperienceChange}
+          ></ExperienceInput>
+          <PersonalStatementInput
+            handleInput={this.handleInputChange}
+          ></PersonalStatementInput>
+          <button type = "submit"> Submit CV</button>
+        </form>
       </div>
     );
   }
