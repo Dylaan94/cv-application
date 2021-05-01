@@ -6,6 +6,7 @@ import PhoneInput from "./CVForm/PhoneInput";
 import EducationInput from "./CVForm/EducationInput";
 import ExperienceInput from "./CVForm/ExperienceInput";
 import PersonalStatementInput from "./CVForm/PersonalStatementInput";
+import CVRender from "./CVForm/CVRender"
 
 class Main extends Component {
   constructor(props) {
@@ -109,6 +110,9 @@ class Main extends Component {
           ></PersonalStatementInput>
           <button type = "submit"> Submit CV</button>
         </form>
+        <CVRender data = {this.state}>
+          
+</CVRender>
       </div>
     );
   }
