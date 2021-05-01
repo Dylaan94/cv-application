@@ -40,6 +40,7 @@ const ExperienceInput = (props) => {
           onChange={handleInput}
           name="summary"
         ></input>
+        <button type="submit">Add</button>
       </form>
     </div>
   );

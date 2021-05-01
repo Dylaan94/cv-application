@@ -5,6 +5,7 @@ import EmailInput from "./CVForm/EmailInput";
 import PhoneInput from "./CVForm/PhoneInput";
 import EducationInput from "./CVForm/EducationInput";
 import ExperienceInput from "./CVForm/ExperienceInput";
+import PersonalStatementInput from "./CVForm/PersonalStatementInput";
 
 class Main extends Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Main extends Component {
           summary: "",
         },
       ],
+      personalStatement: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
@@ -96,6 +98,9 @@ class Main extends Component {
         <ExperienceInput
           handleInput={this.handleExperienceChange}
         ></ExperienceInput>
+        <PersonalStatementInput
+          handleInput={this.handleInputChange}
+        ></PersonalStatementInput>
       </div>
     );
   }
