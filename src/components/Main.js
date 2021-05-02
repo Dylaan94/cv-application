@@ -6,7 +6,11 @@ import PhoneInput from "./CVForm/PhoneInput";
 import EducationInput from "./CVForm/EducationInput";
 import ExperienceInput from "./CVForm/ExperienceInput";
 import PersonalStatementInput from "./CVForm/PersonalStatementInput";
-import CVRender from "./CVForm/CVRender"
+import CVRender from "./CVForm/CVRender";
+
+import styled from "styled-components";
+
+import MainStyles from "./CVForm/styles/MainStyles";
 
 class Main extends Component {
   constructor(props) {
@@ -36,7 +40,7 @@ class Main extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputChange(e) {
@@ -80,25 +84,27 @@ class Main extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log("form submitted")
+    console.log("form submitted");
   }
 
   render() {
     return (
-      <div>
-        <form onSubmit = {this.handleSubmit}>
-          <NameInput
-            value={this.state.name}
-            handleInput={this.handleInputChange}
-          ></NameInput>
-          <EmailInput
-            value={this.state.email}
-            handleInput={this.handleInputChange}
-          ></EmailInput>
-          <PhoneInput
-            value={this.state.phone}
-            handleInput={this.handleInputChange}
-          ></PhoneInput>
+      <MainStyles.RootDiv>
+        <MainStyles.FormDiv onSubmit={this.handleSubmit}>
+          <MainStyles.ContactInfo>
+            <NameInput
+              value={this.state.name}
+              handleInput={this.handleInputChange}
+            ></NameInput>
+            <EmailInput
+              value={this.state.email}
+              handleInput={this.handleInputChange}
+            ></EmailInput>
+            <PhoneInput
+              value={this.state.phone}
+              handleInput={this.handleInputChange}
+            ></PhoneInput>
+          </MainStyles.ContactInfo>
           <EducationInput
             handleInput={this.handleEducationChange}
           ></EducationInput>
@@ -108,12 +114,11 @@ class Main extends Component {
           <PersonalStatementInput
             handleInput={this.handleInputChange}
           ></PersonalStatementInput>
-          <button type = "submit"> Submit CV</button>
-        </form>
-        <CVRender data = {this.state}>
-          
-</CVRender>
-      </div>
+          <button type="submit"> Submit CV</button>
+        </MainStyles.FormDiv>
+
+        <CVRender data={this.state}></CVRender>
+      </MainStyles.RootDiv>
     );
   }
 }
