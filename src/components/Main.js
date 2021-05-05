@@ -104,9 +104,11 @@ class Main extends Component {
               handleInput={this.handleInputChange}
             ></PhoneInput>
           </MainStyles.ContactInfo>
-          <PersonalStatementInput
-            handleInput={this.handleInputChange}
-          ></PersonalStatementInput>
+          <MainStyles.PersonalStatementInfo>
+            <PersonalStatementInput
+              handleInput={this.handleInputChange}
+            ></PersonalStatementInput>
+          </MainStyles.PersonalStatementInfo>
           <MainStyles.EducationInfo>
             <EducationInput
               handleInput={this.handleEducationChange}

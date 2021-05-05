@@ -6,7 +6,7 @@ const PersonalStatementInput = (props) => {
 
   return (
     <div>
-      Personal Statement:
+      <p>Personal Statement</p>
       <input
         type="text"
         value={value}

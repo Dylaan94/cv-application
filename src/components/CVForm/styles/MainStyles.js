@@ -33,6 +33,14 @@ const ContactInfo = styled.div`
   }
 `;
 
+const PersonalStatementInfo = styled.div`
+  input {
+    margin: 0.5em;
+    width: 60vw;
+    height: 5vh;
+  }
+`;
+
 const EducationInfo = styled.div`
   padding: 0.5em;
   p {
@@ -51,24 +59,20 @@ const ExperienceInfo = styled.div`
   .jobDiv > p,
   .dateDiv > p {
     display: inline;
-
   }
   input {
     height: 2vh;
   }
-
   .summaryDiv {
     text-align: center;
     input {
       width: 50vw;
-      height: 5vh;
+      height: 3vh;
     }
-
     button {
       display: inline;
     }
   }
-
   input {
     margin: 0.3em;
   }
@@ -78,6 +82,7 @@ const MainStyles = {
   RootDiv: RootDiv,
   FormDiv: FormDiv,
   ContactInfo: ContactInfo,
+  PersonalStatementInfo: PersonalStatementInfo,
   EducationInfo: EducationInfo,
   ExperienceInfo: ExperienceInfo,
 };
