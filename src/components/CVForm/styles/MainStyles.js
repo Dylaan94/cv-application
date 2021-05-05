@@ -1,11 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import ExperienceInput from "../ExperienceInput";
 
 const RootDiv = styled.div`
   display: flex;
   width: 100vw;
   flex-direction: column;
   align-items: center;
+  p {
+    padding: 0%;
+    margin: 0%;
+  }
 `;
 
 const FormDiv = styled.div`
@@ -20,12 +25,61 @@ const ContactInfo = styled.div`
   flex-direction: column;
   align-items: center;
   width: 60vw;
+  input {
+    width: 50vw;
+    padding: 0.5em;
+    height: 3vh;
+    margin: 0.3em;
+  }
+`;
+
+const EducationInfo = styled.div`
+  padding: 0.5em;
+  p {
+    display: inline;
+    margin: 0.5em;
+  }
+  input {
+    height: 2vh;
+  }
+  button {
+    margin-left: 0.5em;
+  }
+`;
+
+const ExperienceInfo = styled.div`
+  .jobDiv > p,
+  .dateDiv > p {
+    display: inline;
+
+  }
+  input {
+    height: 2vh;
+  }
+
+  .summaryDiv {
+    text-align: center;
+    input {
+      width: 50vw;
+      height: 5vh;
+    }
+
+    button {
+      display: inline;
+    }
+  }
+
+  input {
+    margin: 0.3em;
+  }
 `;
 
 const MainStyles = {
   RootDiv: RootDiv,
   FormDiv: FormDiv,
   ContactInfo: ContactInfo,
+  EducationInfo: EducationInfo,
+  ExperienceInfo: ExperienceInfo,
 };
 
 export default MainStyles;

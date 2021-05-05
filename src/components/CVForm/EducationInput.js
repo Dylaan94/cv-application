@@ -4,21 +4,14 @@ const EducationInput = (props) => {
   const { value, handleInput } = props;
   return (
     <div>
-      School:
+      <p>School:</p>
       <input
         type="text"
         value={value}
         onChange={handleInput}
         name="school"
       ></input>
-      City:
-      <input
-        type="text"
-        value={value}
-        onChange={handleInput}
-        name="city"
-      ></input>
-      Degree:
+      <p>Degree:</p>
       <input
         type="text"
         value={value}

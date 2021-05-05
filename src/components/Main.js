@@ -22,7 +22,6 @@ class Main extends Component {
       education: [
         {
           school: "",
-          city: "",
           degree: "",
         },
       ],
@@ -105,15 +104,20 @@ class Main extends Component {
               handleInput={this.handleInputChange}
             ></PhoneInput>
           </MainStyles.ContactInfo>
-          <EducationInput
-            handleInput={this.handleEducationChange}
-          ></EducationInput>
-          <ExperienceInput
-            handleInput={this.handleExperienceChange}
-          ></ExperienceInput>
           <PersonalStatementInput
             handleInput={this.handleInputChange}
           ></PersonalStatementInput>
+          <MainStyles.EducationInfo>
+            <EducationInput
+              handleInput={this.handleEducationChange}
+            ></EducationInput>
+          </MainStyles.EducationInfo>
+          <MainStyles.ExperienceInfo>
+            <ExperienceInput
+              handleInput={this.handleExperienceChange}
+            ></ExperienceInput>
+          </MainStyles.ExperienceInfo>
+
           <button type="submit"> Submit CV</button>
         </MainStyles.FormDiv>
 
