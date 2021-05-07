@@ -13,7 +13,7 @@ const RootDiv = styled.div`
   }
 `;
 
-const FormDiv = styled.div`
+const FormDiv = styled.form`
   display: flex;
   width: 80vw;
   flex-direction: column;

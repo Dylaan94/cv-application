@@ -1,10 +1,11 @@
 import React from "react";
+import FormRenderStyles from "./styles/FormRenderStyles";
 
 const CVRender = (props) => {
   const { data } = props;
   console.log(data);
   return (
-    <div>
+    <FormRenderStyles.CVForm id = "cvForm" style = {{display:"none"}}>
       <p>Name: {data.name}</p>
       <p>Email: {data.email}</p>
       <p>Phone: {data.phone}</p>
@@ -20,7 +21,7 @@ const CVRender = (props) => {
       <p>Date From: {data.experience[0].dateFrom}</p>
       <p>Date To: {data.experience[0].dateTo} </p>
       <p>Job summary: {data.experience[0].summary} </p>
-    </div>
+    </FormRenderStyles.CVForm>
   );
 };
 

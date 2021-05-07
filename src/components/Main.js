@@ -84,6 +84,11 @@ class Main extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log("form submitted");
+    const cvForm = document.getElementById("cvForm");
+
+    if (cvForm.style.display == "none") {
+      cvForm.style.display = "block";
+    }
   }
 
   render() {
