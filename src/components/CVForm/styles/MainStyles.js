@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ExperienceInput from "../ExperienceInput";
 
 const RootDiv = styled.div`
+  background: #0077b6;
   display: flex;
   width: 100vw;
   flex-direction: column;
@@ -21,6 +22,7 @@ const FormDiv = styled.form`
 `;
 
 const ContactInfo = styled.div`
+  background: #00b4d8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,7 +50,7 @@ const EducationInfo = styled.div`
     margin: 0.5em;
   }
   input {
-    height: 2vh;
+    height: 3vh;
   }
   button {
     margin-left: 0.5em;
@@ -61,13 +63,13 @@ const ExperienceInfo = styled.div`
     display: inline;
   }
   input {
-    height: 2vh;
+    height: 3vh;
   }
   .summaryDiv {
     text-align: center;
     input {
       width: 50vw;
-      height: 3vh;
+      height: 5vh;
     }
     button {
       display: inline;

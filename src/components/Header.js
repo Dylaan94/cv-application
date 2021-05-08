@@ -1,9 +1,12 @@
 import React from "react";
+import HeaderStyles from "./CVForm/styles/HeaderStyles"
 
 const Header = (props) => {
     return (
-        <h1> This is a header </h1>
-    )
+      <HeaderStyles.Header>
+        This is a header
+      </HeaderStyles.Header>
+    );
 }
 
 export default Header;

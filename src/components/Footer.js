@@ -1,9 +1,12 @@
 import React from "react"
+import HeaderStyles from "./CVForm/styles/HeaderStyles"
 
 const Footer = (props) => {
     return (
-        <h2> This is the footer </h2>
-    )
+      <HeaderStyles.Header>
+        This is the footer 
+      </HeaderStyles.Header>
+    );
 }
 
 export default Footer
