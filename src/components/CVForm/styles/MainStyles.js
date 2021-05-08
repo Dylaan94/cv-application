@@ -14,6 +14,12 @@ const RootDiv = styled.div`
   }
 `;
 
+const ContainerDiv = styled.div`
+  background: #00b4d8;
+  width: 80vw;
+  border-radius: 10px;
+`;
+
 const FormDiv = styled.form`
   display: flex;
   width: 80vw;
@@ -22,7 +28,7 @@ const FormDiv = styled.form`
 `;
 
 const ContactInfo = styled.div`
-  background: #00b4d8;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +88,7 @@ const ExperienceInfo = styled.div`
 
 const MainStyles = {
   RootDiv: RootDiv,
+  ContainerDiv: ContainerDiv,
   FormDiv: FormDiv,
   ContactInfo: ContactInfo,
   PersonalStatementInfo: PersonalStatementInfo,

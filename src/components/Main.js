@@ -84,7 +84,7 @@ class Main extends Component {
   handleSubmit(e) {
     // checks if CV is currently displayed and renders if not
     e.preventDefault();
-    const cvForm = document.getElementById("cvForm"); 
+    const cvForm = document.getElementById("cvForm");
     if (cvForm.style.display == "none") {
       cvForm.style.display = "block";
     }
@@ -93,39 +93,41 @@ class Main extends Component {
   render() {
     return (
       <MainStyles.RootDiv>
-        <MainStyles.FormDiv onSubmit={this.handleSubmit}>
-          <MainStyles.ContactInfo>
-            <NameInput
-              value={this.state.name}
-              handleInput={this.handleInputChange}
-            ></NameInput>
-            <EmailInput
-              value={this.state.email}
-              handleInput={this.handleInputChange}
-            ></EmailInput>
-            <PhoneInput
-              value={this.state.phone}
-              handleInput={this.handleInputChange}
-            ></PhoneInput>
-          </MainStyles.ContactInfo>
-          <MainStyles.PersonalStatementInfo>
-            <PersonalStatementInput
-              handleInput={this.handleInputChange}
-            ></PersonalStatementInput>
-          </MainStyles.PersonalStatementInfo>
-          <MainStyles.EducationInfo>
-            <EducationInput
-              handleInput={this.handleEducationChange}
-            ></EducationInput>
-          </MainStyles.EducationInfo>
-          <MainStyles.ExperienceInfo>
-            <ExperienceInput
-              handleInput={this.handleExperienceChange}
-            ></ExperienceInput>
-          </MainStyles.ExperienceInfo>
+        <MainStyles.ContainerDiv>
+          <MainStyles.FormDiv onSubmit={this.handleSubmit}>
+            <MainStyles.ContactInfo>
+              <NameInput
+                value={this.state.name}
+                handleInput={this.handleInputChange}
+              ></NameInput>
+              <EmailInput
+                value={this.state.email}
+                handleInput={this.handleInputChange}
+              ></EmailInput>
+              <PhoneInput
+                value={this.state.phone}
+                handleInput={this.handleInputChange}
+              ></PhoneInput>
+            </MainStyles.ContactInfo>
+            <MainStyles.PersonalStatementInfo>
+              <PersonalStatementInput
+                handleInput={this.handleInputChange}
+              ></PersonalStatementInput>
+            </MainStyles.PersonalStatementInfo>
+            <MainStyles.EducationInfo>
+              <EducationInput
+                handleInput={this.handleEducationChange}
+              ></EducationInput>
+            </MainStyles.EducationInfo>
+            <MainStyles.ExperienceInfo>
+              <ExperienceInput
+                handleInput={this.handleExperienceChange}
+              ></ExperienceInput>
+            </MainStyles.ExperienceInfo>
 
-          <button type="submit"> Submit CV</button>
-        </MainStyles.FormDiv>
+            <button type="submit"> Submit CV</button>
+          </MainStyles.FormDiv>
+        </MainStyles.ContainerDiv>
 
         <CVRender data={this.state}></CVRender>
       </MainStyles.RootDiv>
