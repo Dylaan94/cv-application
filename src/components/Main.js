@@ -8,8 +8,6 @@ import ExperienceInput from "./CVForm/ExperienceInput";
 import PersonalStatementInput from "./CVForm/PersonalStatementInput";
 import CVRender from "./CVForm/CVRender";
 
-import styled from "styled-components";
-
 import MainStyles from "./CVForm/styles/MainStyles";
 
 class Main extends Component {
@@ -85,7 +83,7 @@ class Main extends Component {
     // checks if CV is currently displayed and renders if not
     e.preventDefault();
     const cvForm = document.getElementById("cvForm");
-    if (cvForm.style.display == "none") {
+    if (cvForm.style.display === "none") {
       cvForm.style.display = "block";
     }
   }
@@ -124,12 +122,10 @@ class Main extends Component {
                 handleInput={this.handleExperienceChange}
               ></ExperienceInput>
             </MainStyles.ExperienceInfo>
-
             <button type="submit"> Submit CV</button>
           </MainStyles.FormDiv>
         </MainStyles.ContainerDiv>
-
-        <CVRender data={this.state}></CVRender>
+        <CVRender data={this.state}></CVRender> {/* sends data as a prop */}
       </MainStyles.RootDiv>
     );
   }

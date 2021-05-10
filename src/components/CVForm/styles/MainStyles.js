@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ExperienceInput from "../ExperienceInput";
 
 const RootDiv = styled.div`
   background: #0077b6;
