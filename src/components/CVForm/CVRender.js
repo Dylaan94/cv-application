@@ -21,7 +21,7 @@ const CVRender = (props) => {
       </FormRenderStyles.HeaderDiv>
       <FormRenderStyles.PersonalDiv>
         <p>Personal Statement</p>
-        <p>{data.personalStatement}</p>
+        {data.personalStatement}
       </FormRenderStyles.PersonalDiv>
       <p>Education:</p>
       <p>School: {data.education[0].school}</p>
