@@ -18,6 +18,20 @@ const EducationInput = (props) => {
         onChange={handleInput}
         name="degree"
       ></input>
+      <p>Date From:</p>
+      <input
+        type="text"
+        value={value}
+        onChange={handleInput}
+        name="dateFrom"
+      ></input>
+      <p>Date To:</p>
+      <input
+        type="text"
+        value={value}
+        onChange={handleInput}
+        name="dateTo"
+      ></input>
       <button type="submit">Add</button>
     </div>
   );

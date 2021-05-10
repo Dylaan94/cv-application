@@ -21,6 +21,9 @@ class Main extends Component {
         {
           school: "",
           degree: "",
+          city: "",
+          dateFrom: "",
+          dateTo: "",
         },
       ],
       experience: [
@@ -82,9 +85,10 @@ class Main extends Component {
   handleSubmit(e) {
     // checks if CV is currently displayed and renders if not
     e.preventDefault();
+
     const cvForm = document.getElementById("cvForm");
     if (cvForm.style.display === "none") {
-      cvForm.style.display = "block";
+      cvForm.style.display = "flex";
     }
   }
 

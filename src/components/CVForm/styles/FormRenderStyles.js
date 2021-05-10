@@ -32,7 +32,6 @@ const ContactDiv = styled.div`
 const PersonalDiv = styled.div`
   width: 60vw;
   justify-content: center;
-  align-items: center;
   padding-bottom: 0.6em;
   p {
     font-weight: 700;
@@ -41,15 +40,55 @@ const PersonalDiv = styled.div`
   }
 `;
 
-const EduDiv = styled.div``;
+const EduDiv = styled.div`
+  width: 50vw;
+`;
 
-const EduTitleDiv = styled.div``;
+const EduTitleDiv = styled.div`
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 700;
+`;
 
-const EduDataDiv = styled.div``;
+const EduDataDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+`;
 
-const EduTimeDiv = styled.div``;
+const EduTimeDiv = styled.div`
+  text-align: left;
+`;
 
-const EduInfoDiv = styled.div``;
+const EduInfoDiv = styled.div`
+  margin-left: 30%;
+  text-align: left;
+`;
+
+const EmployDiv = styled.div`
+  width: 50vw;
+`;
+
+const EmployTitleDiv = styled.div`
+  text-align: left;
+  font-size: 1.5em;
+  font-weight: 700;
+`;
+
+const EmployDataDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 50vw;
+`;
+
+const EmployTimeDiv = styled.div`
+  text-align: left;
+`;
+
+const EmployInfoDiv = styled.div`
+  margin-left: 30%;
+  text-align: left;
+`;
 
 const FormRenderStyles = {
   Wrapper: Wrapper,
@@ -62,6 +101,11 @@ const FormRenderStyles = {
   EduDataDiv: EduDataDiv,
   EduTimeDiv: EduTimeDiv,
   EduInfoDiv: EduInfoDiv,
+  EmployDiv: EmployDiv,
+  EmployTitleDiv: EmployTitleDiv,
+  EmployDataDiv: EmployDataDiv,
+  EmployTimeDiv: EmployTimeDiv,
+  EmployInfoDiv: EmployInfoDiv,
 };
 
 export default FormRenderStyles;
