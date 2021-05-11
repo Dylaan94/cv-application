@@ -1,7 +1,7 @@
 import React from "react";
 
 const EducationInput = (props) => {
-  const { value, handleInput } = props;
+  const { value, handleInput, handleAdd } = props;
   return (
     <div>
       <p>School:</p>
@@ -32,7 +32,9 @@ const EducationInput = (props) => {
         onChange={handleInput}
         name="dateTo"
       ></input>
-      <button type="submit">Add</button>
+      <button type="button" onClick={handleAdd}>
+        Add
+      </button>
     </div>
   );
 };

@@ -19,6 +19,7 @@ class Main extends Component {
       phone: "",
       education: [
         {
+          id: "",
           school: "",
           degree: "",
           city: "",
@@ -39,6 +40,7 @@ class Main extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
+    this.handleAddEducation = this.handleAddEducation.bind(this)
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -67,6 +69,22 @@ class Main extends Component {
     console.log(this.state);
   }
 
+  handleAddEducation(e) {
+    console.log("addding new education array")
+
+    this.setState({
+      education: this.state.education.concat({
+        id: "1 desu",
+        school: "",
+        degree: "",
+        city: "",
+        dateFrom: "",
+        dateTo: "",
+      }),
+    });
+    console.log(this.state.education)
+  }
+
   handleExperienceChange(e) {
     let value = e.target.value;
     let key = e.target.name;
@@ -93,45 +111,47 @@ class Main extends Component {
   }
 
   render() {
-    return (
-      <MainStyles.RootDiv>
-        <MainStyles.ContainerDiv>
-          <MainStyles.FormDiv onSubmit={this.handleSubmit}>
-            <MainStyles.ContactInfo>
-              <NameInput
-                value={this.state.name}
-                handleInput={this.handleInputChange}
-              ></NameInput>
-              <EmailInput
-                value={this.state.email}
-                handleInput={this.handleInputChange}
-              ></EmailInput>
-              <PhoneInput
-                value={this.state.phone}
-                handleInput={this.handleInputChange}
-              ></PhoneInput>
-            </MainStyles.ContactInfo>
-            <MainStyles.PersonalStatementInfo>
-              <PersonalStatementInput
-                handleInput={this.handleInputChange}
-              ></PersonalStatementInput>
-            </MainStyles.PersonalStatementInfo>
-            <MainStyles.EducationInfo>
-              <EducationInput
-                handleInput={this.handleEducationChange}
-              ></EducationInput>
-            </MainStyles.EducationInfo>
-            <MainStyles.ExperienceInfo>
-              <ExperienceInput
-                handleInput={this.handleExperienceChange}
-              ></ExperienceInput>
-            </MainStyles.ExperienceInfo>
-            <button type="submit"> Submit CV</button>
-          </MainStyles.FormDiv>
-        </MainStyles.ContainerDiv>
-        <CVRender data={this.state}></CVRender> {/* sends data as a prop */}
-      </MainStyles.RootDiv>
-    );
+
+      return (
+        <MainStyles.RootDiv>
+          <MainStyles.ContainerDiv>
+            <MainStyles.FormDiv onSubmit={this.handleSubmit}>
+              <MainStyles.ContactInfo>
+                <NameInput
+                  value={this.state.name}
+                  handleInput={this.handleInputChange}
+                ></NameInput>
+                <EmailInput
+                  value={this.state.email}
+                  handleInput={this.handleInputChange}
+                ></EmailInput>
+                <PhoneInput
+                  value={this.state.phone}
+                  handleInput={this.handleInputChange}
+                ></PhoneInput>
+              </MainStyles.ContactInfo>
+              <MainStyles.PersonalStatementInfo>
+                <PersonalStatementInput
+                  handleInput={this.handleInputChange}
+                ></PersonalStatementInput>
+              </MainStyles.PersonalStatementInfo>
+              <MainStyles.EducationInfo>
+                <EducationInput
+                  handleInput={this.handleEducationChange}
+                  handleAdd= {this.handleAddEducation}
+                ></EducationInput>
+              </MainStyles.EducationInfo>
+              <MainStyles.ExperienceInfo>
+                <ExperienceInput
+                  handleInput={this.handleExperienceChange}
+                ></ExperienceInput>
+              </MainStyles.ExperienceInfo>
+              <button type="submit"> Submit CV</button>
+            </MainStyles.FormDiv>
+          </MainStyles.ContainerDiv>
+          <CVRender data={this.state}></CVRender> {/* sends data as a prop */}
+        </MainStyles.RootDiv>
+      );
   }
 }
 
