@@ -4,7 +4,6 @@ const EducationInput = (props) => {
   const { data, value, handleInput, handleAdd } = props;
   return (
     <div>
-      {console.log(data)}
       {data.map((edu) => {
         return (
           <div key={edu.id}>

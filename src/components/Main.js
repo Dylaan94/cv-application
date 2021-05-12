@@ -31,6 +31,7 @@ class Main extends Component {
       ],
       experience: [
         {
+          id: 1,
           jobTitle: "",
           companyName: "",
           dateFrom: "",
@@ -44,6 +45,7 @@ class Main extends Component {
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddEducation = this.handleAddEducation.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
+    this.handleAddExperience = this.handleAddExperience.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -102,6 +104,22 @@ class Main extends Component {
     console.log(this.state);
   }
 
+  handleAddExperience(e) {
+    console.log("adding new exprience")
+
+    this.setState({
+      experience: this.state.experience.concat({
+        id: this.state.experience.length + 1,
+        jobTitle: "",
+        companyName: "",
+        dateFrom: "",
+        dateTo: "",
+        summary: "",
+      }),
+    });
+    console.log(this.state.experience)
+  }
+
   handleSubmit(e) {
     // checks if CV is currently displayed and renders if not
     e.preventDefault();
@@ -146,6 +164,8 @@ class Main extends Component {
             <MainStyles.ExperienceInfo>
               <ExperienceInput
                 handleInput={this.handleExperienceChange}
+                handleAdd={this.handleAddExperience}
+                data = {this.state.experience}
               ></ExperienceInput>
             </MainStyles.ExperienceInfo>
             <button type="submit"> Submit CV</button>
