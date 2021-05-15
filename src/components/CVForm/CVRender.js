@@ -5,6 +5,7 @@ const CVRender = (props) => {
   // destructures data from props
   const { data } = props;
   console.log(data);
+  console.log(data.education)
   return (
     <FormRenderStyles.Wrapper id="cvForm" style={{ display: "none" }}>
       {/*style = {{display:"none"}}*/}
@@ -23,20 +24,27 @@ const CVRender = (props) => {
         <p>Personal Statement</p>
         {data.personalStatement}
       </FormRenderStyles.PersonalDiv>
+
       <FormRenderStyles.EduDiv>
         <FormRenderStyles.EduTitleDiv>
           <p>Education:</p>
         </FormRenderStyles.EduTitleDiv>
-        <FormRenderStyles.EduDataDiv>
-          <FormRenderStyles.EduTimeDiv>
-            <p>Date From: {data.education[0].dateFrom}</p>
-            <p>Date To: {data.education[0].dateTo}</p>
-          </FormRenderStyles.EduTimeDiv>
-          <FormRenderStyles.EduInfoDiv>
-            <p>School: {data.education[0].school}</p>
-            <p>Degree: {data.education[0].degree}</p>
-          </FormRenderStyles.EduInfoDiv>
-        </FormRenderStyles.EduDataDiv>
+        {/* Maps the education data based on state */}
+        {data.education.map((edu) => {
+          return (
+            <FormRenderStyles.EduDataDiv>
+              <FormRenderStyles.EduTimeDiv>
+                <p>Date From: {data.education.dateFrom}</p>
+                <p>Date To: {data.education.dateTo}</p>
+              </FormRenderStyles.EduTimeDiv>
+              <FormRenderStyles.EduInfoDiv>
+                <p>School: {data.education.school}</p>
+                <p>Degree: {data.education.degree}</p>
+              </FormRenderStyles.EduInfoDiv>
+            </FormRenderStyles.EduDataDiv>
+          );
+        })}
+
       </FormRenderStyles.EduDiv>
       <FormRenderStyles.EmployDiv>
         <FormRenderStyles.EmployTitleDiv>
