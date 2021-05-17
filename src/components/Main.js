@@ -68,7 +68,6 @@ class Main extends Component {
     let item = { ...array[index - 1] }; // targets array for data, can add further arrays later
     item[name] = value; // targets item based on target name
     array[index - 1] = item; // re adds item to the array which is then set through setState
-    console.log(" hi ");
     this.setState({
       education: array,
     });
@@ -92,15 +91,17 @@ class Main extends Component {
   handleExperienceChange(e) {
     let value = e.target.value;
     let key = e.target.name;
+    let index = e.target.id;
 
     let array = [...this.state.experience];
-    console.log(array);
-    let item = { ...array[0] };
+
+    let item = { ...array[index-1] };
     item[key] = value;
-    array[0] = item;
+    array[index-1] = item;
     this.setState({
       experience: array,
     });
+    
     console.log(this.state);
   }
 

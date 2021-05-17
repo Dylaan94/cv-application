@@ -14,6 +14,7 @@ const ExperienceInput = (props) => {
                 value={value}
                 onChange={handleInput}
                 name="jobTitle"
+                id={exp.id}
               ></input>
               <p>Company Name: </p>
               <input
@@ -21,6 +22,7 @@ const ExperienceInput = (props) => {
                 value={value}
                 onChange={handleInput}
                 name="companyName"
+                id={exp.id}
               ></input>
             </div>
             <div className="dateDiv">
@@ -30,6 +32,7 @@ const ExperienceInput = (props) => {
                 value={value}
                 onChange={handleInput}
                 name="dateFrom"
+                id={exp.id}
               ></input>
               <p>Date To:</p>
               <input
@@ -37,6 +40,7 @@ const ExperienceInput = (props) => {
                 value={value}
                 onChange={handleInput}
                 name="dateTo"
+                id={exp.id}
               ></input>
             </div>
             <div className="summaryDiv">
@@ -46,6 +50,7 @@ const ExperienceInput = (props) => {
                 value={value}
                 onChange={handleInput}
                 name="summary"
+                id={exp.id}
               ></input>
             </div>
             <button type="button" onClick={handleAdd}>

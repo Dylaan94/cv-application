@@ -6,6 +6,7 @@ const CVRender = (props) => {
   const { data } = props;
   console.log(data);
   console.log(data.education)
+  console.log(data.experience)
   return (
     <FormRenderStyles.Wrapper id="cvForm" style={{ display: "none" }}>
       {/*style = {{display:"none"}}*/}
