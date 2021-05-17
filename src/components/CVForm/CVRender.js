@@ -32,14 +32,14 @@ const CVRender = (props) => {
         {/* Maps the education data based on state */}
         {data.education.map((edu) => {
           return (
-            <FormRenderStyles.EduDataDiv>
+            <FormRenderStyles.EduDataDiv key = {edu.id}>
               <FormRenderStyles.EduTimeDiv>
-                <p>Date From: {data.education.dateFrom}</p>
-                <p>Date To: {data.education.dateTo}</p>
+                <p>Date From: {edu.dateFrom}</p>
+                <p>Date To: {edu.dateTo}</p>
               </FormRenderStyles.EduTimeDiv>
               <FormRenderStyles.EduInfoDiv>
-                <p>School: {data.education.school}</p>
-                <p>Degree: {data.education.degree}</p>
+                <p>School: {edu.school}</p>
+                <p>Degree: {edu.degree}</p>
               </FormRenderStyles.EduInfoDiv>
             </FormRenderStyles.EduDataDiv>
           );
@@ -50,17 +50,22 @@ const CVRender = (props) => {
         <FormRenderStyles.EmployTitleDiv>
           <p>Experience:</p>
         </FormRenderStyles.EmployTitleDiv>
-        <FormRenderStyles.EmployDataDiv>
-          <FormRenderStyles.EmployTimeDiv>
-            <p>Date From: {data.experience[0].dateFrom}</p>
-            <p>Date To: {data.experience[0].dateTo} </p>
-          </FormRenderStyles.EmployTimeDiv>
-          <FormRenderStyles.EmployInfoDiv>
-            <p>Job Title: {data.experience[0].jobTitle}</p>
-            <p>Company: {data.experience[0].companyName}</p>
-            <p>Job summary: {data.experience[0].summary} </p>
-          </FormRenderStyles.EmployInfoDiv>
-        </FormRenderStyles.EmployDataDiv>
+        {data.experience.map((exp) => {
+          return (
+            <FormRenderStyles.EmployDataDiv key = {exp.id}>
+              <FormRenderStyles.EmployTimeDiv>
+                <p>Date From: {exp.dateFrom}</p>
+                <p>Date To: {exp.dateTo} </p>
+              </FormRenderStyles.EmployTimeDiv>
+              <FormRenderStyles.EmployInfoDiv>
+                <p>Job Title: {exp.jobTitle}</p>
+                <p>Company: {exp.companyName}</p>
+                <p>Job summary: {exp.summary} </p>
+              </FormRenderStyles.EmployInfoDiv>
+            </FormRenderStyles.EmployDataDiv>
+          );
+        })}
+
       </FormRenderStyles.EmployDiv>
     </FormRenderStyles.Wrapper>
   );

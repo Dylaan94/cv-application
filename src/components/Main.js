@@ -8,7 +8,7 @@ import ExperienceInput from "./CVForm/ExperienceInput";
 import PersonalStatementInput from "./CVForm/PersonalStatementInput";
 import CVRender from "./CVForm/CVRender";
 
-import uniqid from "uniqid"
+import uniqid from "uniqid";
 
 import MainStyles from "./CVForm/styles/MainStyles";
 
@@ -60,22 +60,23 @@ class Main extends Component {
 
   handleEducationChange(e) {
     let value = e.target.value; // value written in the box
-    let key = e.target.name; // name of the input eg school
+    let name = e.target.name; // name of the input eg school
+    let index = e.target.id; // id so can target in state
 
     let array = [...this.state.education]; // creates array based off state
-    console.log(array);
-    let item = { ...array[0] }; // targets array for data, can add further arrays later
-    item[key] = value; // targets item based on target name
-    array[0] = item; // re adds item to the array which is then set through setState
+
+    let item = { ...array[index - 1] }; // targets array for data, can add further arrays later
+    item[name] = value; // targets item based on target name
+    array[index - 1] = item; // re adds item to the array which is then set through setState
+    console.log(" hi ");
     this.setState({
       education: array,
     });
+
     console.log(this.state);
   }
 
   handleAddEducation(e) {
-    console.log("addding new education array");
-
     this.setState({
       education: this.state.education.concat({
         id: this.state.education.length + 1,
@@ -86,7 +87,6 @@ class Main extends Component {
         dateTo: "",
       }),
     });
-    console.log(this.state.education);
   }
 
   handleExperienceChange(e) {
@@ -105,7 +105,7 @@ class Main extends Component {
   }
 
   handleAddExperience(e) {
-    console.log("adding new exprience")
+    console.log("adding new exprience");
 
     this.setState({
       experience: this.state.experience.concat({
@@ -117,7 +117,7 @@ class Main extends Component {
         summary: "",
       }),
     });
-    console.log(this.state.experience)
+    console.log(this.state.experience);
   }
 
   handleSubmit(e) {
@@ -165,7 +165,7 @@ class Main extends Component {
               <ExperienceInput
                 handleInput={this.handleExperienceChange}
                 handleAdd={this.handleAddExperience}
-                data = {this.state.experience}
+                data={this.state.experience}
               ></ExperienceInput>
             </MainStyles.ExperienceInfo>
             <button type="submit"> Submit CV</button>

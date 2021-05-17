@@ -13,6 +13,7 @@ const EducationInput = (props) => {
               value={value}
               onChange={handleInput}
               name="school"
+              id={edu.id}
             ></input>
             <p>Degree:</p>
             <input
@@ -20,6 +21,7 @@ const EducationInput = (props) => {
               value={value}
               onChange={handleInput}
               name="degree"
+              id={edu.id}
             ></input>
             <p>Date From:</p>
             <input
@@ -27,6 +29,7 @@ const EducationInput = (props) => {
               value={value}
               onChange={handleInput}
               name="dateFrom"
+              id={edu.id}
             ></input>
             <p>Date To:</p>
             <input
@@ -34,6 +37,7 @@ const EducationInput = (props) => {
               value={value}
               onChange={handleInput}
               name="dateTo"
+              id={edu.id}
             ></input>
             <button type="button" onClick={handleAdd}>
               Add
