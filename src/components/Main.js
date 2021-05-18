@@ -44,6 +44,7 @@ class Main extends Component {
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleEducationChange = this.handleEducationChange.bind(this);
     this.handleAddEducation = this.handleAddEducation.bind(this);
+    this.handleDeleteEducation = this.handleDeleteEducation.bind(this);
     this.handleExperienceChange = this.handleExperienceChange.bind(this);
     this.handleAddExperience = this.handleAddExperience.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -88,6 +89,26 @@ class Main extends Component {
     });
   }
 
+  handleDeleteEducation(e) {
+    let index = parseInt(e.target.id);
+    let array = [...this.state.experience];
+
+    if (index == 1) {
+      alert("cannot delete");
+    } else {
+      let item = {
+        id: index,
+        status: "deleted",
+      };
+      array[index - 1] = item;
+      this.setState({
+        education: array,
+      });
+      
+      console.log("deleting");
+    }
+  }
+
   handleExperienceChange(e) {
     let value = e.target.value;
     let key = e.target.name;
@@ -95,13 +116,13 @@ class Main extends Component {
 
     let array = [...this.state.experience];
 
-    let item = { ...array[index-1] };
+    let item = { ...array[index - 1] };
     item[key] = value;
-    array[index-1] = item;
+    array[index - 1] = item;
     this.setState({
       experience: array,
     });
-    
+
     console.log(this.state);
   }
 
@@ -159,6 +180,7 @@ class Main extends Component {
               <EducationInput
                 handleInput={this.handleEducationChange}
                 handleAdd={this.handleAddEducation}
+                handleDelete={this.handleDeleteEducation}
                 data={this.state.education}
               ></EducationInput>
             </MainStyles.EducationInfo>

@@ -1,10 +1,11 @@
 import React from "react";
 
 const EducationInput = (props) => {
-  const { data, value, handleInput, handleAdd } = props;
+  const { data, value, handleInput, handleAdd, handleDelete } = props;
   return (
     <div>
       {data.map((edu) => {
+        if (edu.status !== "deleted") {
         return (
           <div key={edu.id}>
             <p>School:</p>
@@ -41,9 +42,14 @@ const EducationInput = (props) => {
             ></input>
             <button type="button" onClick={handleAdd}>
               Add
-            </button>{" "}
+            </button>
+            <button type="button" onClick={handleDelete} id={edu.id}>
+              Delete
+            </button>
           </div>
         );
+        }
+
       })}
     </div>
   );
